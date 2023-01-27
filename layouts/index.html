@@ -1,0 +1,17 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+	{{ partialCached "banner.html" . }}
+	<div class="posts-group">
+	<nav id="home-nav" class="site-nav">
+		{{ partialCached "posts.html" . }}
+	</nav>
+	<hr>
+	</div>
+{{ end }}
+
+{{ define "footer" }}
+{{ partialCached "footer.html" . }}
+{{ end }}

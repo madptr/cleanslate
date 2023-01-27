@@ -1,0 +1,21 @@
+<div id="spotlight" class="animated fadeIn">
+    <div id="home-center">
+        
+        <div style="width: 100%; display: table;">
+            <div style="display: table-cell; align:float-left">
+                <h1 id="home-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+                    <span>
+                        {{- with .Site.Params.homeSubtitle }}
+                        <p id="home-subtitle">{{.}}</p>
+                        {{- end }}
+                    </span>
+            </div>
+            <div style="display: table-cell;">
+                <span>
+                    {{- with .Site.Params.social }}
+                    <p id="home-social">{{ partialCached "social-icons.html" . }}</p>
+                    {{- end }}
+                </span>
+            </div>
+        </div>
+    </div>

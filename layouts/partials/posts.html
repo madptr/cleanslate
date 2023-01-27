@@ -1,0 +1,18 @@
+{{ $pages := .Paginate (where .Site.RegularPages "Type" "posts") }}
+{{ $groupBy := $pages.Pages.GroupByDate "2006" }}
+{{ range where .Site.RegularPages "Type" "posts"}}
+    <ul class="post-item">
+        <a href="{{.Permalink}}">
+			<div style="width: 100%; display: table;">
+                <div style="display: table-cell; align:float-left">
+                    <span class="post-title"; style="float:left">{{.Title}} </span>
+                </div>  
+                
+				<div style="display: table-cell;">
+                    <span class="post-day"; style="float:right">{{ .Date.Format .Site.Params.dateformShort }}</span>
+                </div>
+            </div>
+        </a>
+    </ul>
+{{- end }}
+            

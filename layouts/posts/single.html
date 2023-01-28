@@ -68,9 +68,11 @@
 			</a>
 			{{- end }}
 		</div>
-		<div id="comments" class="thin">
-		{{- partial "comments.html" . -}}
-		</div>
+		{{ if (ne .Params.disqus false)}}
+			<div id="comments" class="thin">
+				{{- partial "comments.html" . -}}
+			</div>
+		{{end}}
 	</main>
 {{ end }}
 

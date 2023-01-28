@@ -1,0 +1,31 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+{{ partialCached "banner.html" .}}
+    <h1 class="post-tag-title">All {{ .Type }}</h1>
+    <div>
+        <ul class="posts-tag-group"; style="width: 100%"; >
+            {{ range .Site.Taxonomies.tags }}
+            <div style="width: 100%;margin: auto">
+            <ul class="post-tag-item">
+                <div style="width: 100%;margin: auto">
+                    <div style="width: 100%;display: table-cell; align:float-left;">
+                        <span class="post-title"; style="float:left"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> </span>
+                    </div> 
+                    <div style="width: 100%;display: table-cell;">
+                        <span class="post-tag-count"; style="float:right">{{ .Count }}</span>
+                    </div>
+                </div>
+            </ul>
+        </div>
+            {{ end }}
+        </ul>
+        <hr>
+    </div>
+{{ end }}
+
+{{ define "footer" }}
+{{ partialCached "footer.html" . }}
+{{ end }}

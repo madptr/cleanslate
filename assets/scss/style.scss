@@ -109,6 +109,12 @@ hr {
   margin: 1.8em auto;
 }
 
+tag-list {
+  
+  text-align: left;
+  font-size: 25em;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -450,6 +456,8 @@ p.img-404 {
 .posts-group {
   width: 75vw;
   max-width: 640px;
+  padding: 0;
+  list-style: none;
 
   .post-year {
     font-size: 1em;
@@ -482,6 +490,48 @@ p.img-404 {
 
   .post-day {
       font-size: 1em;
+    text-align: right;
+    @include dimmed;
+  }
+}
+
+.posts-tag-group {
+  min-width: 40vw;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+
+  .post-year {
+    font-size: 1em;
+    @include dimmed;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+
+  .post-tag-item {
+    margin: auto;
+    padding: auto;
+    max-width: 640px;
+
+    a {
+      font-size: 1.5em;
+      text-align: center;
+      align-items: baseline;
+      
+    }
+  }
+
+  .post-tag-day {
+      font-size: 1em;
+    text-align: right;
+    @include dimmed;
+  }
+  .post-tag-count {
+      font-size: 1.5em;
     text-align: right;
     @include dimmed;
   }

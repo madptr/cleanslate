@@ -1,0 +1,34 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+{{ partialCached "banner.html" .}}
+<h1>All posts for {{ .Type | singularize }} "{{ .Title }}"</h1>
+<div>
+    
+        <ul class="posts-tag-group"; style="width: 100%"; >
+            {{- range .Data.Pages }}
+            <ul class="post-tag-item">
+                <a href="{{.Permalink}}">
+                    <div style="width: 100%; display: table;">
+                        <div style="display: table-cell; align:float-left">
+                            <span class="post-title"; style="float:left">{{.Title}} </span>
+                        </div>  
+                        
+                        <div style="display: table-cell;">
+                            <span class="post-tag-day"; style="float:right">{{ .Date.Format .Site.Params.dateformShort }}</span>
+                        </div>
+                    </div>
+                </a>
+            </ul>
+            {{- end }}
+        </ul>
+    
+        <hr>
+</div>
+{{ end}}
+
+{{ define "footer" }}
+{{ partialCached "footer.html" . }}
+{{ end }}
